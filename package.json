@@ -9,10 +9,21 @@
   "keywords": [
     "cli"
   ],
+  "bin": {
+    "ginit": "./index.js"
+  },
   "author": "Isabella HU",
   "license": "ISC",
   "dependencies": {
+    "@octokit/auth": "^2.0.0",
+    "@octokit/rest": "^17.5.1",
     "chalk": "^4.0.0",
-    "ora": "^4.0.3"
+    "clui": "^0.3.6",
+    "configstore": "^5.0.1",
+    "fs": "0.0.1-security",
+    "inquirer": "^7.1.0",
+    "lodash.without": "^4.4.0",
+    "minimist": "^1.2.5",
+    "simple-git": "^1.132.0"
   }
 }
