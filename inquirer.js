@@ -62,13 +62,42 @@ const repoDetailsQuestions = [
   },
 ];
 
-inquirer.prompt(repoDetailsQuestions);
+const twoFactorAuthenticationCode = [
+  {
+    type: "input",
+    name: "code",
+    message: "Type two-factor Authentication Code:",
+    validate: (input) => {
+      if (!input.length) {
+        return "you need to input something";
+      } else {
+        return true;
+      }
+    },
+  },
+];
+
+const gitignoreQuestions = (list) => [
+  {
+    type: "checkbox",
+    name: "gitignore",
+    message: "Choose file to ignore",
+    default: list[0] || "",
+    choices: list,
+  },
+];
 
 module.exports = {
   askGithubCredentials: () => {
-    inquirer.prompt(githubCredentialsQuestions);
+    return inquirer.prompt(githubCredentialsQuestions);
+  },
+  getTwoFactorAuthenticationCode: () => {
+    return inquirer.prompt(twoFactorAuthenticationCode);
   },
   askRepoDetails: () => {
-    inquirer.prompt(repoDetailsQuestions);
+    return inquirer.prompt(repoDetailsQuestions);
+  },
+  askGitignore: (filelist) => {
+    return inquirer.prompt(gitignoreQuestions(filelist));
   },
 };
