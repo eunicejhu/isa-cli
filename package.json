@@ -24,6 +24,6 @@
     "inquirer": "^7.1.0",
     "lodash.without": "^4.4.0",
     "minimist": "^1.2.5",
-    "simple-git": "^1.132.0"
+    "simple-git": "^3.5.0"
   }
 }
